@@ -3,7 +3,16 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, Github, Youtube, Instagram, Star, Search, Command } from 'lucide-react';
+import {
+  Menu,
+  Github,
+  Youtube,
+  Instagram,
+  Star,
+  Search,
+  Command,
+  ArrowUpRight,
+} from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/layout/logo';
 import { DesktopNavigation } from '@/components/layout/desktop-navigation';
@@ -104,6 +113,12 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
               <span className="flex shrink-0">
                 <ThemeToggle />
               </span>
+              <Button size="sm" asChild className="hidden shrink-0 sm:inline-flex">
+                <Link href="/submit">
+                  Submit your tool
+                  <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </Button>
               <Button
                 variant="outline"
                 size="icon-sm"

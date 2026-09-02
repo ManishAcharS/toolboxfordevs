@@ -4,6 +4,7 @@ import { FeaturedToolsSection } from '@/components/sections/featured-tools-secti
 import { PopularCategoriesSection } from '@/components/sections/popular-categories-section';
 import { RecentlyAddedSection } from '@/components/sections/recently-added-section';
 import { HomeComparisonsSection } from '@/components/sections/home-comparisons-section';
+import { SubmitCtaSection } from '@/components/sections/submit-cta-section';
 import { FooterCtaSection } from '@/components/sections/footer-cta-section';
 import { createDefaultMetadata } from '@/lib/seo';
 
@@ -30,6 +31,7 @@ export default function HomePage() {
       <PopularCategoriesSection />
       <RecentlyAddedSection />
       <HomeComparisonsSection />
+      <SubmitCtaSection />
       <FooterCtaSection />
     </div>
   );

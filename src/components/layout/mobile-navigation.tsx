@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronDown, X, ExternalLink, Wrench } from 'lucide-react';
+import { ChevronDown, X, ExternalLink, Wrench, ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { mainNavigation, siteConfig } from '@/config/site';
 import { useLockBody } from '@/hooks/use-interaction';
@@ -152,6 +152,14 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({ open, onClose }) =>
         <nav className="h-[calc(100%-73px)] overflow-y-auto py-3">
           <ul className="space-y-0.5">{mainNavigation.map(renderItem)}</ul>
           <div className="border-border mt-4 border-t px-4 pt-4">
+            <Link
+              href="/submit"
+              onClick={onClose}
+              className="hover-glow border-border bg-primary text-primary-foreground hover:bg-primary/90 mb-2 flex items-center gap-2 rounded-lg border px-4 py-3 text-sm font-semibold transition-colors"
+            >
+              Submit your tool
+              <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+            </Link>
             <Link
               href="/search"
               onClick={onClose}

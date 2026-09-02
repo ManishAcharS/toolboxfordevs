@@ -49,3 +49,6 @@ next-env.d.ts
 # server logs
 /logs/
 *.log
+
+# local submission store
+/data/
