@@ -10,6 +10,7 @@ import {
   SOCIAL_LINKS,
 } from './config';
 import { absoluteUrl, getCanonicalUrl } from './metadata';
+import { getCategoryBySlug } from '@/registry/category-registry';
 
 type JsonLd = Record<string, unknown>;
 
@@ -189,11 +190,15 @@ export function createArticleStructuredData(post: BlogPost): JsonLd {
 }
 
 export function createToolPageStructuredData(tool: ToolDefinition): JsonLd[] {
+  const breadcrumbItems: BreadcrumbItem[] = [{ label: 'Home', href: '/' }];
+  const category = getCategoryBySlug(tool.category);
+  if (category) {
+    breadcrumbItems.push({ label: category.name, href: `/categories/${category.slug}` });
+  }
+  breadcrumbItems.push({ label: tool.title, current: true });
+
   const scripts: JsonLd[] = [
-    createBreadcrumbStructuredData([
-      { label: 'Tools', href: '/tools' },
-      { label: tool.title, current: true },
-    ]),
+    createBreadcrumbStructuredData(breadcrumbItems),
     createSoftwareApplicationStructuredData(tool),
   ];
   if (tool.faqs.length > 0) {
