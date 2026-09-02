@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(siteConfig.url),
   manifest: '/site.webmanifest',
-  other: {
-    'google-adsense-account': 'ca-pub-7664717108398712',
-  },
 };
 
 export const viewport = {
@@ -60,15 +57,19 @@ export default function RootLayout({ children }: RootLayoutProps) {
       data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-7664717108398712" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7664717108398712"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="flex min-h-full flex-col">
         <Script
           id="theme-init"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }}
-        />
-        <Script
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7664717108398712"
-          strategy="afterInteractive"
         />
         <StructuredData
           data={[createWebSiteStructuredData(), createOrganizationStructuredData()]}
