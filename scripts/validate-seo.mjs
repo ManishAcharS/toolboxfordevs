@@ -32,6 +32,13 @@ const REQUIRED_META = [
 
 const EXCLUDED_ROUTES = ['/_global-error'];
 
+// 404 / "not found" pages are non-indexable error pages. They are exempt from rich
+// content metas (og:image, twitter:card) and structured data, but must still have a
+// title, description, and robots noindex so they never leak into search results.
+const NOT_FOUND_ROUTES = ['/_not-found', '/404'];
+const NOT_FOUND_META = ['<title>', 'name="description"'];
+const NOT_FOUND_REQUIRED = ['rel="canonical"'];
+
 const ROUTE_SCHEMAS = [
   { pattern: /\/tools\/[^/]+$/, types: ['SoftwareApplication', 'BreadcrumbList'] },
   { pattern: /\/categories\/[^/]+$/, types: ['CollectionPage', 'BreadcrumbList'] },
@@ -141,6 +148,34 @@ function main() {
       continue;
     }
     const html = readFileSync(file, 'utf8');
+
+    const isNotFound = NOT_FOUND_ROUTES.some((r) => routePath === r);
+    if (isNotFound) {
+      for (const selector of NOT_FOUND_META) {
+        if (!html.includes(selector)) {
+          failures.push(`${url}: missing ${selector} on 404 page`);
+        }
+      }
+      for (const selector of NOT_FOUND_REQUIRED) {
+        if (!html.includes(selector)) {
+          failures.push(`${url}: missing ${selector} on 404 page`);
+        }
+      }
+      const robotsMeta = html.match(/<meta name="robots" content="([^"]*)"/);
+      if (!robotsMeta || !robotsMeta[1].includes('noindex')) {
+        failures.push(`${url}: 404 page must be noindex`);
+      }
+      const titleMatch = html.match(/<title>([\s\S]*?)<\/title>/);
+      if (titleMatch && !titleMatch[1].trim()) {
+        failures.push(`${url}: empty <title>`);
+      }
+      checkHeadings(html, url, failures);
+      if (!failures.some((failure) => failure.startsWith(url + ':'))) {
+        passed++;
+        console.log(`PASS  ${url}`);
+      }
+      continue;
+    }
 
     for (const { selector, label } of REQUIRED_META) {
       if (!html.includes(selector)) {

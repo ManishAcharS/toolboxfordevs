@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   experimental: {
     optimizePackageImports: ['lucide-react'],
+    globalNotFound: true,
   },
   images: {
     formats: ['image/avif', 'image/webp'],
