@@ -8,6 +8,7 @@ export const metadata: Metadata = createMetadata({
   title: 'Resources',
   description: 'Curated learning resources are on the way. Check back soon!',
   canonical: '/resources',
+  noIndex: true,
 });
 
 export default function ResourcesPage() {

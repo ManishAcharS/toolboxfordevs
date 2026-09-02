@@ -62,11 +62,11 @@ export default function PrivacyPolicyPage() {
           <li>We don&apos;t require an account to browse the directory.</li>
         </ul>
 
-        <h2>Cookies</h2>
+        <h2 id="cookies">Cookies</h2>
         <p>
           We use a small number of cookies: a preference cookie for your theme, and optional
           analytics cookies if you consent. You can manage or delete cookies at any time in your
-          browser settings. See our <Link href="/cookies">Cookie Policy</Link> for details.
+          browser settings.
         </p>
 
         <h2>Data retention</h2>
@@ -93,6 +93,14 @@ export default function PrivacyPolicyPage() {
         <p>
           {siteConfig.name} is not directed at children under 13, and we do not knowingly collect
           personal information from them.
+        </p>
+
+        <h2 id="security">Security</h2>
+        <p>
+          We follow security best practices to protect the site and your data. All traffic is served
+          over HTTPS, we never store passwords or sensitive credentials, and we keep our
+          dependencies updated. If you discover a security issue, please report it to{' '}
+          <a href={`mailto:${siteConfig.author.email}`}>{siteConfig.author.email}</a>.
         </p>
 
         <h2>Changes to this policy</h2>

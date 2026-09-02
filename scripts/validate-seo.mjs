@@ -35,6 +35,7 @@ const EXCLUDED_ROUTES = ['/_global-error'];
 const ROUTE_SCHEMAS = [
   { pattern: /\/tools\/[^/]+$/, types: ['SoftwareApplication', 'BreadcrumbList'] },
   { pattern: /\/categories\/[^/]+$/, types: ['CollectionPage', 'BreadcrumbList'] },
+  { pattern: /\/compare\/[^/]+$/, types: ['BreadcrumbList'] },
 ];
 
 const GLOBAL_SCHEMAS = ['WebSite', 'Organization'];

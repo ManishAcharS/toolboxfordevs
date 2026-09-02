@@ -253,5 +253,8 @@ export interface SiteConfig {
     name: string;
     email: string;
   };
+  analytics: {
+    plausibleDomain?: string;
+  };
   theme: ThemeConfig;
 }

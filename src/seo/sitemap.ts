@@ -1,5 +1,6 @@
 import { SITE_URL } from './config';
 import { getAllTools, getAllCategories, getAllPosts } from '@/data';
+import { getComparisons } from '@/data/comparisons';
 
 export type ChangeFrequency =
   'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
@@ -54,8 +55,6 @@ export function getPagesSitemapEntries(): SitemapEntry[] {
     { url: `${SITE_URL}/`, changeFrequency: 'daily', priority: 1 },
     { url: `${SITE_URL}/tools`, changeFrequency: 'daily', priority: 0.9 },
     { url: `${SITE_URL}/categories`, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${SITE_URL}/blog`, changeFrequency: 'weekly', priority: 0.7 },
-    { url: `${SITE_URL}/resources`, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${SITE_URL}/about`, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${SITE_URL}/contact`, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${SITE_URL}/privacy`, changeFrequency: 'yearly', priority: 0.2 },
@@ -87,4 +86,18 @@ export function getBlogSitemapEntries(): SitemapEntry[] {
     changeFrequency: 'monthly',
     priority: 0.6,
   }));
+}
+
+export function getComparisonSitemapEntries(): SitemapEntry[] {
+  return [
+    { url: `${SITE_URL}/compare`, changeFrequency: 'weekly', priority: 0.7 },
+    ...getComparisons().map(({ toolA, toolB }) => ({
+      url: `${SITE_URL}/compare/${toolA.slug}-vs-${toolB.slug}`,
+      lastModified: new Date(
+        Math.max(new Date(toolA.updatedAt).getTime(), new Date(toolB.updatedAt).getTime())
+      ),
+      changeFrequency: 'monthly' as ChangeFrequency,
+      priority: 0.6,
+    })),
+  ];
 }

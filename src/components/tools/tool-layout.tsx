@@ -9,6 +9,7 @@ import { ToolContent } from '@/components/tools/tool-content';
 import { ToolFooter } from '@/components/tools/tool-footer';
 import { ToolFaqSection } from '@/components/tools/tool-faq-section';
 import { RelatedTools } from '@/components/tools/related-tools';
+import { ToolComparisonsSection } from '@/components/tools/tool-comparisons-section';
 
 interface ToolLayoutProps {
   definition: ToolDefinition;
@@ -47,6 +48,7 @@ const ToolLayout: React.FC<ToolLayoutProps> = ({
             <main>
               {content ?? <ToolContent definition={definition} />}
               <ToolFaqSection definition={definition} />
+              <ToolComparisonsSection tool={definition} />
               <RelatedTools tools={relatedTools ?? []} />
             </main>
 

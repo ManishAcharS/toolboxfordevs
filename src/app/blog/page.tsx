@@ -9,6 +9,7 @@ export const metadata: Metadata = createMetadata({
   description: 'Guides and articles are on the way. Check back soon!',
   canonical: '/blog',
   keywords: ['developer blog', 'tool comparisons', 'dev workflows', 'engineering guides'],
+  noIndex: true,
 });
 
 export default function BlogPage() {

@@ -3,6 +3,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, TrendingUp } from 'lucide-react';
+import { trackEvent } from '@/components/providers/analytics-provider';
 import {
   searchEngine,
   getPopularSearches,
@@ -74,6 +75,7 @@ export const SearchPageClient: React.FC<SearchPageClientProps> = ({
       if (!trimmed) return;
       setQuery(trimmed);
       addToHistory(trimmed);
+      trackEvent('Search', { query: trimmed });
     },
     [addToHistory]
   );

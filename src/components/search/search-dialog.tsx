@@ -18,6 +18,7 @@ import { SearchEmptyState } from '@/components/search/search-empty-state';
 import { useSearchHistory } from '@/hooks/use-search-history';
 import { useDebouncedValue } from '@/hooks/use-storage';
 import { useLockBody } from '@/hooks/use-interaction';
+import { trackEvent } from '@/components/providers/analytics-provider';
 
 interface SearchDialogProps {
   open: boolean;
@@ -68,6 +69,7 @@ const SearchDialogInner: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       const trimmed = value.trim();
       if (!trimmed) return;
       addToHistory(trimmed);
+      trackEvent('Search', { query: trimmed });
       onClose();
       router.push(`/search?q=${encodeURIComponent(trimmed)}`);
     },

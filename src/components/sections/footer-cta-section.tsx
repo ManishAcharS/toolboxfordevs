@@ -14,8 +14,8 @@ interface FooterCtaSectionProps {
 }
 
 const FooterCtaSection: React.FC<FooterCtaSectionProps> = ({
-  title = 'Ready to upgrade your toolkit?',
-  description = 'Explore 1000+ developer tools, compare alternatives, and read in-depth guides — all in one place.',
+  title = 'Ready to find your next favorite tool?',
+  description = 'Browse 150+ free developer tools and guides — formatters, converters, testers, and the best software for modern stacks.',
   primaryLabel = 'Browse all tools',
   primaryHref = '/tools',
   secondaryLabel = 'Suggest a tool',

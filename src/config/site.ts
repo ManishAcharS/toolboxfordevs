@@ -3,9 +3,9 @@ import type { NavigationItem, SiteConfig } from '@/types';
 export const siteConfig: SiteConfig = {
   name: 'Toolbox for Devs',
   description:
-    'Discover and compare the best developer tools, resources, and learning materials. Your ultimate toolkit for modern software development.',
+    'A curated directory of 150+ developer tools — generators, converters, formatters, testing suites, and more. Find the right tool for coding, APIs, JSON, CSS, and everyday development tasks.',
   url: 'https://toolboxfordevs.vercel.app',
-  ogImage: '/og-image.png',
+  ogImage: '/og',
   links: {
     github: 'https://github.com/ManishAcharS/toolboxfordevs',
     youtube: 'https://www.youtube.com/@toolboxfordevs',
@@ -14,6 +14,11 @@ export const siteConfig: SiteConfig = {
   author: {
     name: 'Toolbox for Devs Team',
     email: 'manishthelegend99@gmail.com',
+  },
+  analytics: {
+    // Set to your Plausible Analytics domain (e.g. 'toolboxfordevs.com') to enable.
+    // Leave empty to keep analytics disabled. Privacy-friendly, no personal data tracked.
+    plausibleDomain: '',
   },
   theme: {
     colors: {
@@ -59,42 +64,42 @@ export const mainNavigation: NavigationItem[] = [
           items: [
             {
               label: 'API Development',
-              href: '/tools?category=api-development',
+              href: '/categories/api-development',
               description: 'REST, GraphQL, gRPC tools',
             },
             {
               label: 'CI/CD & Deployment',
-              href: '/tools?category=ci-cd',
+              href: '/categories/ci-cd',
               description: 'Pipeline automation',
             },
             {
               label: 'Databases',
-              href: '/tools?category=databases',
+              href: '/categories/databases',
               description: 'SQL, NoSQL, ORM tools',
             },
             {
               label: 'Frontend',
-              href: '/tools?category=frontend',
+              href: '/categories/frontend',
               description: 'Frameworks, libraries, UI',
             },
             {
               label: 'Backend',
-              href: '/tools?category=backend',
+              href: '/categories/backend',
               description: 'Servers, microservices, APIs',
             },
             {
               label: 'Testing',
-              href: '/tools?category=testing',
+              href: '/categories/testing',
               description: 'Unit, integration, E2E testing',
             },
             {
               label: 'Monitoring',
-              href: '/tools?category=monitoring',
+              href: '/categories/monitoring',
               description: 'Logs, metrics, tracing',
             },
             {
               label: 'Security',
-              href: '/tools?category=security',
+              href: '/categories/security',
               description: 'Auth, scanning, compliance',
             },
           ],
@@ -102,14 +107,12 @@ export const mainNavigation: NavigationItem[] = [
         {
           title: 'Popular Tags',
           items: [
-            { label: 'Open Source', href: '/tools?tag=open-source', badge: 'Hot' },
+            { label: 'Open Source', href: '/tools?pricing=open-source' },
             { label: 'Free Tier', href: '/tools?pricing=free' },
             { label: 'TypeScript', href: '/tools?tag=typescript' },
             { label: 'React', href: '/tools?tag=react' },
             { label: 'Node.js', href: '/tools?tag=nodejs' },
             { label: 'Python', href: '/tools?tag=python' },
-            { label: 'Go', href: '/tools?tag=go' },
-            { label: 'Rust', href: '/tools?tag=rust' },
           ],
         },
         {
@@ -130,41 +133,6 @@ export const mainNavigation: NavigationItem[] = [
     label: 'Categories',
     href: '/categories',
     icon: 'folder',
-    megaMenu: {
-      columns: [
-        {
-          title: 'All Categories',
-          items: [
-            {
-              label: 'Development',
-              href: '/categories/development',
-              description: 'Core dev tools',
-            },
-            {
-              label: 'Infrastructure',
-              href: '/categories/infrastructure',
-              description: 'Cloud, containers, servers',
-            },
-            { label: 'Data', href: '/categories/data', description: 'Databases, analytics, ML' },
-            {
-              label: 'Design',
-              href: '/categories/design',
-              description: 'UI/UX, prototyping, assets',
-            },
-            {
-              label: 'Productivity',
-              href: '/categories/productivity',
-              description: 'IDEs, editors, automation',
-            },
-            {
-              label: 'Collaboration',
-              href: '/categories/collaboration',
-              description: 'Team tools, docs, chat',
-            },
-          ],
-        },
-      ],
-    },
   },
   {
     label: 'Blog',
@@ -172,40 +140,9 @@ export const mainNavigation: NavigationItem[] = [
     icon: 'book-open',
   },
   {
-    label: 'Resources',
-    href: '/resources',
-    icon: 'graduation-cap',
-    megaMenu: {
-      columns: [
-        {
-          title: 'Learn',
-          items: [
-            { label: 'Tutorials', href: '/resources?type=tutorial' },
-            { label: 'Courses', href: '/resources?type=course' },
-            { label: 'Books', href: '/resources?type=book' },
-            { label: 'Videos', href: '/resources?type=video' },
-          ],
-        },
-        {
-          title: 'Stay Updated',
-          items: [
-            { label: 'Newsletters', href: '/resources?type=newsletter' },
-            { label: 'Podcasts', href: '/resources?type=podcast' },
-            { label: 'Communities', href: '/resources?type=community' },
-          ],
-        },
-      ],
-    },
-  },
-  {
-    label: 'Pricing',
-    href: '/pricing',
-    icon: 'credit-card',
-  },
-  {
-    label: 'Changelog',
-    href: '/changelog',
-    icon: 'git-branch',
+    label: 'About',
+    href: '/about',
+    icon: 'info',
   },
 ];
 
@@ -213,23 +150,19 @@ export const footerNavigation = {
   product: [
     { label: 'Tools', href: '/tools' },
     { label: 'Categories', href: '/categories' },
+    { label: 'Comparisons', href: '/compare' },
     { label: 'Blog', href: '/blog' },
     { label: 'Resources', href: '/resources' },
-    { label: 'Changelog', href: '/changelog' },
-    { label: 'Roadmap', href: '/roadmap' },
   ],
   company: [
     { label: 'About', href: '/about' },
-    { label: 'Careers', href: '/careers' },
-    { label: 'Press', href: '/press' },
     { label: 'Contact', href: '/contact' },
-    { label: 'Partners', href: '/partners' },
   ],
   legal: [
     { label: 'Privacy', href: '/privacy' },
     { label: 'Terms', href: '/terms' },
-    { label: 'Cookie Policy', href: '/cookies' },
-    { label: 'Security', href: '/security' },
+    { label: 'Cookie Policy', href: '/privacy#cookies' },
+    { label: 'Security', href: '/privacy#security' },
   ],
   social: [
     {

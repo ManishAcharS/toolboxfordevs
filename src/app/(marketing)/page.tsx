@@ -3,10 +3,9 @@ import { HeroSection } from '@/components/sections/hero-section';
 import { FeaturedToolsSection } from '@/components/sections/featured-tools-section';
 import { PopularCategoriesSection } from '@/components/sections/popular-categories-section';
 import { RecentlyAddedSection } from '@/components/sections/recently-added-section';
-import { LatestArticlesSection } from '@/components/sections/latest-articles-section';
+import { HomeComparisonsSection } from '@/components/sections/home-comparisons-section';
 import { FooterCtaSection } from '@/components/sections/footer-cta-section';
 import { createDefaultMetadata } from '@/lib/seo';
-import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = createDefaultMetadata();
 
@@ -14,22 +13,23 @@ export default function HomePage() {
   return (
     <div className="flex-1">
       <HeroSection
-        badge={`${siteConfig.name} is growing — 1000+ tools coming`}
+        badge="150+ hand-picked developer tools, updated regularly"
         title={
           <>
-            Every developer tool you need,{' '}
+            Find the right{' '}
             <span className="from-primary to-accent bg-gradient-to-r bg-clip-text text-transparent">
-              discovered and compared
-            </span>
+              developer tool
+            </span>{' '}
+            faster
           </>
         }
-        subtitle="Discover, compare, and master the best developer tools, resources, and learning materials — all in one place."
-        suggestions={['Postman', 'Prisma', 'Turborepo', 'Playwright', 'Docker']}
+        subtitle="Free generators, converters, formatters, and testing tools — plus a curated directory of the best software for coding, APIs, JSON, CSS, and everyday dev tasks."
+        suggestions={['Postman', 'Prisma', 'JSON Formatter', 'Playwright', 'Base64 Encoder']}
       />
       <FeaturedToolsSection />
       <PopularCategoriesSection />
       <RecentlyAddedSection />
-      <LatestArticlesSection />
+      <HomeComparisonsSection />
       <FooterCtaSection />
     </div>
   );
