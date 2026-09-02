@@ -63,6 +63,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }}
         />
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7664717108398712"
+          strategy="afterInteractive"
+        />
         <StructuredData
           data={[createWebSiteStructuredData(), createOrganizationStructuredData()]}
         />
