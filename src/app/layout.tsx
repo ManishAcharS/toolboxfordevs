@@ -34,6 +34,9 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(siteConfig.url),
   manifest: '/site.webmanifest',
+  other: {
+    'google-adsense-account': 'ca-pub-7664717108398712',
+  },
 };
 
 export const viewport = {
