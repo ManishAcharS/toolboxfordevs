@@ -37,7 +37,8 @@ const EXCLUDED_ROUTES = ['/_global-error'];
 // title, description, and robots noindex so they never leak into search results.
 const NOT_FOUND_ROUTES = ['/_not-found', '/404'];
 const NOT_FOUND_META = ['<title>', 'name="description"'];
-const NOT_FOUND_REQUIRED = ['rel="canonical"'];
+// 404 pages are noindex error responses; canonical/OG/rich data are not required.
+const NOT_FOUND_REQUIRED = [];
 
 const ROUTE_SCHEMAS = [
   { pattern: /\/tools\/[^/]+$/, types: ['SoftwareApplication', 'BreadcrumbList'] },
