@@ -25,3 +25,4 @@ export {
   getResourceBySlug,
   getAllResources,
 } from './content';
+export { toolGuides, getToolGuide, getAllToolGuides } from './tool-guides';

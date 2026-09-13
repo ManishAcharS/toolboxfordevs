@@ -45,7 +45,7 @@ export async function GET() {
           Find the right developer tool faster
         </div>
         <div style={{ fontSize: 30, color: '#9ca3af', maxWidth: 800, fontWeight: 400 }}>
-          150+ free developer tools — generators, converters, formatters, and testers.
+          Free developer tools — generators, converters, formatters, and testers.
         </div>
       </div>
     </div>,

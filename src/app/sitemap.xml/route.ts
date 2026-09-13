@@ -8,6 +8,7 @@ export function GET(): Response {
     { loc: `${SITE_URL}/sitemaps/tools.xml` },
     { loc: `${SITE_URL}/sitemaps/categories.xml` },
     { loc: `${SITE_URL}/sitemaps/comparisons.xml` },
+    { loc: `${SITE_URL}/sitemaps/blog.xml` },
   ]);
   return sitemapXmlResponse(xml);
 }

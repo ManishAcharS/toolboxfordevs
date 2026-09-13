@@ -1,5 +1,5 @@
 import React, { type ReactNode } from 'react';
-import type { ToolDefinition } from '@/types';
+import type { ToolDefinition, ToolGuide } from '@/types';
 import { cn } from '@/lib/utils';
 import { getToolBreadcrumbItems } from '@/registry/metadata';
 import { Breadcrumb } from '@/components/shared/breadcrumb';
@@ -10,10 +10,12 @@ import { ToolFooter } from '@/components/tools/tool-footer';
 import { ToolFaqSection } from '@/components/tools/tool-faq-section';
 import { RelatedTools } from '@/components/tools/related-tools';
 import { ToolComparisonsSection } from '@/components/tools/tool-comparisons-section';
+import { ToolGuideContent } from '@/components/tools/tool-guide-content';
 
 interface ToolLayoutProps {
   definition: ToolDefinition;
   relatedTools?: ToolDefinition[];
+  guide?: ToolGuide;
   content?: ReactNode;
   actions?: ReactNode;
   className?: string;
@@ -22,11 +24,14 @@ interface ToolLayoutProps {
 const ToolLayout: React.FC<ToolLayoutProps> = ({
   definition,
   relatedTools,
+  guide,
   content,
   actions,
   className,
 }) => {
   const breadcrumb = getToolBreadcrumbItems(definition);
+  const guideFaqs = guide?.faqs ?? [];
+  const mergedFaqs = guideFaqs.length > 0 ? [...definition.faqs, ...guideFaqs] : definition.faqs;
 
   return (
     <div className="bg-background min-h-screen">
@@ -47,7 +52,8 @@ const ToolLayout: React.FC<ToolLayoutProps> = ({
 
             <main>
               {content ?? <ToolContent definition={definition} />}
-              <ToolFaqSection definition={definition} />
+              {guide && <ToolGuideContent guide={guide} />}
+              <ToolFaqSection definition={definition} faqs={mergedFaqs} />
               <ToolComparisonsSection tool={definition} />
               <RelatedTools tools={relatedTools ?? []} />
             </main>

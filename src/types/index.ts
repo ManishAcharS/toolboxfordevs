@@ -20,6 +20,8 @@ export type {
   CategoryFAQ,
 } from './tool-framework';
 
+export type { ToolGuide, ToolGuideLink, ToolGuideFAQ } from './tool-guide';
+
 export interface Category {
   id: string;
   slug: string;

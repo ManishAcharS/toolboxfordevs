@@ -17,10 +17,10 @@ export const toolDefinitions: ToolDefinition[] = [
       'api collaboration',
     ],
     tags: ['api', 'rest', 'graphql', 'testing', 'documentation'],
+    website: 'https://www.postman.com',
     pricing: 'freemium',
     featured: true,
-    rating: 4.8,
-    reviewsCount: 12450,
+
     faqs: [
       {
         question: 'Is Postman free to use?',
@@ -77,10 +77,11 @@ export const toolDefinitions: ToolDefinition[] = [
     category: 'frontend',
     keywords: ['deployment', 'hosting', 'nextjs', 'serverless', 'jamstack', 'edge'],
     tags: ['deployment', 'serverless', 'nextjs', 'hosting', 'jamstack'],
+    website: 'https://vercel.com',
+    repository: 'https://github.com/vercel/vercel',
     pricing: 'freemium',
     featured: true,
-    rating: 4.9,
-    reviewsCount: 8930,
+
     faqs: [
       {
         question: 'Is Vercel free for personal projects?',
@@ -143,10 +144,11 @@ export const toolDefinitions: ToolDefinition[] = [
       'nodejs database',
     ],
     tags: ['orm', 'typescript', 'nodejs', 'database', 'postgresql'],
+    website: 'https://www.prisma.io',
+    repository: 'https://github.com/prisma/prisma',
     pricing: 'open-source',
     featured: true,
-    rating: 4.7,
-    reviewsCount: 5670,
+
     faqs: [
       {
         question: 'Which databases does Prisma support?',
@@ -219,10 +221,11 @@ const user = await prisma.user.findUnique({
     category: 'productivity',
     keywords: ['monorepo', 'build system', 'task caching', 'ci caching', 'typescript builds'],
     tags: ['monorepo', 'build', 'caching', 'typescript', 'javascript'],
+    website: 'https://turbo.build',
+    repository: 'https://github.com/vercel/turborepo',
     pricing: 'open-source',
     featured: true,
-    rating: 4.6,
-    reviewsCount: 3420,
+
     faqs: [
       {
         question: 'How does Turborepo speed up builds?',
@@ -294,10 +297,11 @@ const user = await prisma.user.findUnique({
       'edge functions',
     ],
     tags: ['database', 'auth', 'realtime', 'postgresql', 'open-source'],
+    website: 'https://supabase.com',
+    repository: 'https://github.com/supabase/supabase',
     pricing: 'freemium',
     featured: false,
-    rating: 4.8,
-    reviewsCount: 7210,
+
     faqs: [
       {
         question: 'Is Supabase really open source?',
@@ -358,10 +362,11 @@ const channel = supabase
       'test framework',
     ],
     tags: ['testing', 'unit', 'vite', 'typescript', 'javascript'],
+    website: 'https://vitest.dev',
+    repository: 'https://github.com/vitest-dev/vitest',
     pricing: 'open-source',
     featured: false,
-    rating: 4.8,
-    reviewsCount: 4310,
+
     faqs: [
       {
         question: 'How is Vitest different from Jest?',
@@ -413,10 +418,11 @@ describe('add', () => {
     category: 'monitoring',
     keywords: ['dashboards', 'metrics visualization', 'observability', 'logs', 'alerting'],
     tags: ['monitoring', 'dashboards', 'metrics', 'logs', 'observability'],
+    website: 'https://grafana.com',
+    repository: 'https://github.com/grafana/grafana',
     pricing: 'freemium',
     featured: false,
-    rating: 4.7,
-    reviewsCount: 5890,
+
     faqs: [
       {
         question: 'Which data sources does Grafana connect to?',
@@ -463,10 +469,11 @@ describe('add', () => {
       'local development',
     ],
     tags: ['containers', 'devops', 'deployment', 'virtualization'],
+    website: 'https://www.docker.com',
+    repository: 'https://github.com/moby/moby',
     pricing: 'freemium',
     featured: false,
-    rating: 4.8,
-    reviewsCount: 10230,
+
     faqs: [
       {
         question: 'What is a container?',
@@ -539,10 +546,11 @@ volumes:
       'performance',
     ],
     tags: ['error-tracking', 'monitoring', 'debugging', 'crash-reporting'],
+    website: 'https://sentry.io',
+    repository: 'https://github.com/getsentry/sentry',
     pricing: 'freemium',
     featured: false,
-    rating: 4.6,
-    reviewsCount: 4780,
+
     faqs: [
       {
         question: 'What languages does Sentry support?',
@@ -587,10 +595,10 @@ Sentry.init({
     category: 'security',
     keywords: ['authentication', 'oauth2', 'sso', 'identity provider', 'jwt'],
     tags: ['authentication', 'authorization', 'sso', 'security', 'oauth'],
+    website: 'https://auth0.com',
     pricing: 'freemium',
     featured: false,
-    rating: 4.6,
-    reviewsCount: 3450,
+
     faqs: [
       {
         question: 'Which protocols does Auth0 support?',
@@ -645,10 +653,11 @@ console.log(user.email);`,
       'trace viewer',
     ],
     tags: ['e2e', 'testing', 'browser', 'automation', 'open-source'],
+    website: 'https://playwright.dev',
+    repository: 'https://github.com/microsoft/playwright',
     pricing: 'open-source',
     featured: false,
-    rating: 4.8,
-    reviewsCount: 6120,
+
     faqs: [
       {
         question: 'Which browsers does Playwright support?',
@@ -703,10 +712,10 @@ test('search filters results', async ({ page }) => {
       'actions marketplace',
     ],
     tags: ['ci', 'cd', 'automation', 'workflows', 'github'],
+    website: 'https://github.com/features/actions',
     pricing: 'freemium',
     featured: false,
-    rating: 4.8,
-    reviewsCount: 9870,
+
     faqs: [
       {
         question: 'How much CI minutes do I get for free?',
@@ -769,10 +778,10 @@ jobs:
     category: 'design',
     keywords: ['ui design', 'prototyping', 'design system', 'dev mode', 'collaborative design'],
     tags: ['design', 'ui', 'ux', 'prototyping', 'collaboration'],
+    website: 'https://www.figma.com',
     pricing: 'freemium',
     featured: false,
-    rating: 4.8,
-    reviewsCount: 11200,
+
     faqs: [
       {
         question: 'Is Figma free?',
@@ -828,10 +837,10 @@ figma.ui.onmessage = (msg: { type: string }) => {
       'incident response',
     ],
     tags: ['communication', 'team', 'chat', 'collaboration'],
+    website: 'https://slack.com',
     pricing: 'freemium',
     featured: false,
-    rating: 4.4,
-    reviewsCount: 8760,
+
     faqs: [
       {
         question: 'Is Slack free for teams?',

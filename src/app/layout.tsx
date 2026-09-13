@@ -59,11 +59,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
     >
       <head>
         <meta name="google-adsense-account" content="ca-pub-7664717108398712" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7664717108398712"
-          crossOrigin="anonymous"
-        />
       </head>
       <body className="flex min-h-full flex-col">
         <Script

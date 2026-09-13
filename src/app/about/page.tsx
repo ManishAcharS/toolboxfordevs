@@ -7,6 +7,8 @@ import { Prose } from '@/components/shared/prose';
 import { NewsletterSection } from '@/components/sections/newsletter-section';
 import { FooterCtaSection } from '@/components/sections/footer-cta-section';
 import { siteConfig } from '@/config/site';
+import { toolDefinitions } from '@/registry/tool-definitions';
+import { categoryDefinitions, dynamicCategoryDefinitions } from '@/registry/category-definitions';
 
 export const metadata: Metadata = createMetadata({
   title: 'About Us',
@@ -16,8 +18,11 @@ export const metadata: Metadata = createMetadata({
 });
 
 const stats = [
-  { value: '1000+', label: 'Tools planned' },
-  { value: '12', label: 'Categories' },
+  { value: `${toolDefinitions.length}+`, label: 'Developer tools' },
+  {
+    value: `${categoryDefinitions.length + dynamicCategoryDefinitions.length}`,
+    label: 'Categories',
+  },
   { value: '100%', label: 'Developer built' },
   { value: '0', label: 'Sponsored bias' },
 ];

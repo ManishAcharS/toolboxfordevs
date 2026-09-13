@@ -3,7 +3,7 @@ import type { NavigationItem, SiteConfig } from '@/types';
 export const siteConfig: SiteConfig = {
   name: 'Toolbox for Devs',
   description:
-    'A curated directory of 150+ developer tools — generators, converters, formatters, testing suites, and more. Find the right tool for coding, APIs, JSON, CSS, and everyday development tasks.',
+    'A curated directory of developer tools — generators, converters, formatters, testing suites, and more. Find the right tool for coding, APIs, JSON, CSS, and everyday development tasks.',
   url: 'https://toolboxfordevs.vercel.app',
   ogImage: '/og',
   links: {

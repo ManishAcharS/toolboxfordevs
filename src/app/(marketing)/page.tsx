@@ -7,6 +7,7 @@ import { HomeComparisonsSection } from '@/components/sections/home-comparisons-s
 import { SubmitCtaSection } from '@/components/sections/submit-cta-section';
 import { FooterCtaSection } from '@/components/sections/footer-cta-section';
 import { createDefaultMetadata } from '@/lib/seo';
+import { toolDefinitions } from '@/registry/tool-definitions';
 
 export const metadata: Metadata = createDefaultMetadata();
 
@@ -14,7 +15,7 @@ export default function HomePage() {
   return (
     <div className="flex-1">
       <HeroSection
-        badge="150+ hand-picked developer tools, updated regularly"
+        badge={`${toolDefinitions.length}+ hand-picked developer tools, updated regularly`}
         title={
           <>
             Find the right{' '}

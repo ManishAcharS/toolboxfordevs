@@ -7,6 +7,7 @@ import {
   generateToolMetadata,
   generateToolStructuredData,
 } from '@/registry';
+import { getToolGuide } from '@/data/tool-guides';
 import { StructuredData } from '@/lib/seo';
 import { ToolLayout } from '@/components/tools/tool-layout';
 import { ToolContent } from '@/components/tools/tool-content';
@@ -40,6 +41,7 @@ export default async function ToolPage({ params }: ToolPageProps) {
 
   const { definition } = entry;
   const relatedTools = getRelatedToolsFor(definition, 3);
+  const guide = getToolGuide(definition.slug);
 
   return (
     <>
@@ -47,6 +49,7 @@ export default async function ToolPage({ params }: ToolPageProps) {
       <ToolLayout
         definition={definition}
         relatedTools={relatedTools}
+        guide={guide}
         content={<ToolContent definition={definition} component={entry.component} />}
       />
     </>

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
+import { toolDefinitions } from '@/registry/tool-definitions';
 
 interface FooterCtaSectionProps {
   title?: string;
@@ -13,9 +14,11 @@ interface FooterCtaSectionProps {
   secondaryHref?: string;
 }
 
+const DEFAULT_DESCRIPTION = `Browse ${toolDefinitions.length}+ free developer tools and guides — formatters, converters, testers, and the best software for modern stacks.`;
+
 const FooterCtaSection: React.FC<FooterCtaSectionProps> = ({
   title = 'Ready to find your next favorite tool?',
-  description = 'Browse 150+ free developer tools and guides — formatters, converters, testers, and the best software for modern stacks.',
+  description = DEFAULT_DESCRIPTION,
   primaryLabel = 'Browse all tools',
   primaryHref = '/tools',
   secondaryLabel = 'Suggest a tool',
